@@ -1,5 +1,5 @@
 # Discord Emotes Downloader
-This repository contains 2 scripts for downloading emojis from Discord servers. The scripts does not involve Discord API calls but rather rely solely on the Inspector function of the Desktop Discord client. This repository is not licensed.
+This repository contains 2 scripts for downloading emojis from Discord servers. The scripts does not involve Discord API calls but rather rely solely on the Inspector function of the Desktop Discord client. This repository is licensed under MIT. 
 
 # Dependency
 ## JS
