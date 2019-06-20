@@ -14,3 +14,7 @@ In the Discord client, press `Ctrl + Shift + I` to open up the Inspector (prefer
 The user **MUST** clean up the log from any un-related lines at the start and end of the log file. This is critical as the program does not sanitize input.
 
 Next, open a terminal and navigate to the folder of the scripts, and enter `pip install -U requests` to install the `requests` dependency. After everything has finished, run the script by typing `python DiscordEmojiDownload.py` and enter the log's location. The program will download everything automatically, however any exception will not be caught and if so, the program will exit prematurely. Note that the Python script will download to the directory of said script.
+
+# Legality 
+
+Due to concern of Discord's Terms of Service violation, I emailed their customer service with the script asking whether or not the use or the scripts are allowed. The result is ambiguous, as CS did not respond on whether or not it is against ToS to use the scripts, but they mentioned copyright infringement so please do not blame me or my code because of your wrong-doing because you have been personally warned and also been legally bound to follow MIT license (https://github.com/PythonTryHard/Discord_Emote_Downloader/blob/master/Screenshot_2019-06-20-07-09-19_1.png) 
