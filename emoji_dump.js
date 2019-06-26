@@ -9,12 +9,12 @@
 // |       modifying anything.       |
 //  ---------------------------------
 
-//  ------------CRITICAL-------------CRITICAL-------------CRITICAL-------------
+//  ---------------CRITICAL---------------CRITICAL---------------CRITICAL---------------
 // You must correctly specify the Nitro status of the account on the client you 
 // are running this code on else the code will not work due to a "disabled" tag 
-// -----------------[0 is non-Nitro, 1 is Nitro. Default is 0]-----------------
-var nitro_status = 0
-//  ------------CRITICAL-------------CRITICAL-------------CRITICAL-------------
+// ---[Set to 'false' if you don't have Nitro, else set to 'true'. Default is False]---
+var has_nitro = false
+//  ---------------CRITICAL---------------CRITICAL---------------CRITICAL---------------
 
 // This function search for an array in a bigger array of arrays because in JS, [1,2] !== [1,2] because not reffing the same object
 // Code pulled from StackOverflow (https://stackoverflow.com/questions/19543514/check-whether-an-array-exists-in-an-array-of-arrays)
@@ -31,8 +31,9 @@ function searchForArray(haystack, needle){
     return -1;
   }
 
-// Prepare the result array
+// Prepare the result array and nitro status conversion
 var result = []
+var nitro_status = {true:1, false:0}[has_nitro]
 
 // The main function. Due to Discord's emoji list doesn't load all at once, presumably to optimize memory usage, and due to
 // me unable to find a way to automate scrolling, you'll need to manually scroll through things. Optimal: 2 scrolls 1 execute.
@@ -77,4 +78,15 @@ function emoji_dump(){
 }
 
 // Run this function recursively. You'll need to manually scroll through things. Optimal: 2 scrolls 1 execute.
-// Note: Execute twice if needed, the script may miss some emojis due to lag. (Read above, line 37-39)
+// Note: Execute twice if needed, the script may miss some emojis due to lag. (Read above, line 38-40)
+
+// Final function to print everything.
+function print_result()
+{
+  clear()
+  for (i in result)
+  {
+    console.log(result[i])
+  }
+  return
+}

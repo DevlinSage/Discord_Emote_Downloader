@@ -29,7 +29,7 @@ and we're half way done. For the next steps, I recommend using [Notepad++](https
 
 # Legality 
 <p align="center">
-<img src="https://github.com/PythonTryHard/Discord_Emote_Downloader/blob/master/Screenshot_2019-06-20-07-09-19_1.png" width=360 height=192><b>
+<img src="https://github.com/PythonTryHard/Discord_Emote_Downloader/blob/master/Screenshot_2019-06-20-07-09-19_1.png" width=360 height=192><br>
 <i>Excerpt from the CS ticket regarding legality</i>
 </p>
 
