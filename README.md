@@ -28,8 +28,10 @@ and we're half way done. For the next steps, I recommend using [Notepad++](https
 12. Type `python DiscordEmojiDownload.py` and follow the program. Images should start piling up. Note that you'll need to keep an eye on the script, as any error will result in the program terminating. In that case, remove all emoji downloaded from the log (using the Python script's output as reference)
 
 # Legality 
-
-<img src="https://github.com/PythonTryHard/Discord_Emote_Downloader/blob/master/Screenshot_2019-06-20-07-09-19_1.png">
+<figure>
+<center><img src="https://github.com/PythonTryHard/Discord_Emote_Downloader/blob/master/Screenshot_2019-06-20-07-09-19_1.png" width=360 height=192>
+<figcaption><i>Excerpt from the CS ticket regarding legality</i></figcaption>
+</center>
+</figure>
 
 Due to concern of Discord's Terms of Service violation, I emailed their customer service with the script asking whether or not the use or the scripts are allowed. The result is ambiguous, as CS did not respond on whether or not it is against ToS to use the scripts, but they mentioned copyright infringement so please do not blame me or my code because of your wrong-doing because you have been personally warned and also been legally bound to follow MIT license.
-
