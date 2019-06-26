@@ -15,7 +15,7 @@ You can install by running `pip install requests` or `pip install -r requirement
 2. Navigate to "Console". Copy and paste the `emoji_dump.js` file's content. **__DO NOT HIT `ENTER` JUST YET__**
 3. Inside the "Critical" block, specify the account on your desktop client's Nitro status. Now you can press `Enter`
 4. In anywhere, open the emoji selector. Then open the Inspector again. 
-5. Type `emoji_dump()`, hit `Enter`, repeat again for certainty, then scroll down two notches, and repeat.
+5. Type `emoji_dump(result)`, hit `Enter`, repeat again for certainty, then scroll down two notches, and repeat. You can quickly recall the lass executed commands by pressing `Up`.
 6. Repeat until you have gotten everything you want.
 7. Type `print_result()`, hit `Enter`. It may lag for a second. Afterward give it a quick check if anything's missing. After checking, right click in the console, and choose `Save as...`, and save the file in the same folder as the scripts. 
 

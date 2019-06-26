@@ -36,14 +36,14 @@ var result = []
 var nitro_status = {true:1, false:0}[has_nitro]
 
 // The main function. Due to Discord's emoji list doesn't load all at once, presumably to optimize memory usage, and due to
-// me unable to find a way to automate scrolling, you'll need to manually scroll through things. Optimal: 2 scrolls 1 execute.
+// me unable to find a way to automate scrolling, you'll need to manually scroll through things. Optimal: 2 scrolls 2 execute.
 // Note: Execute twice if needed, the script may miss some emojis due to lag.
-function emoji_dump(){
+function emoji_dump(result_array){
   // The custom emojis are stored under "emojiItem-109bjA". The same goes to stock emojis but due to different linking scheme
   // in Discord's CDN which will be checked below, we can filter them out.
   var emoji_list = document.documentElement.getElementsByClassName("emojiItem-109bjA")
   // Variable for deltaing the number of emoji dumped.
-  var previous_length = result.length
+  var previous_length = result_array.length
   // Loop through all the emojis and grab the link and name.
   for (i in emoji_list){
     // Getting emoji's link from the emoji object's "outerHTML". This will get the "https://cdn[...]" link if
@@ -67,17 +67,17 @@ function emoji_dump(){
     // Also a check to prevent duplication.
     if ((emoji_link.slice(0,11) == "https://cdn") && !(searchForArray(result, emoji) >= 0))
     {
-        result.push(emoji)
+        result_array.push(emoji)
     }
   }
   // More deltating
-  var current_length = result.length
+  var current_length = result_array.length
   var delta = current_length - previous_length
   // Return
   return "Completed. Added " + delta + " emojis."
 }
 
-// Run this function recursively. You'll need to manually scroll through things. Optimal: 2 scrolls 1 execute.
+// Run this function recursively. You'll need to manually scroll through things. Optimal: 2 scrolls 2 execute.
 // Note: Execute twice if needed, the script may miss some emojis due to lag. (Read above, line 38-40)
 
 // Final function to print everything.
