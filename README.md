@@ -17,7 +17,7 @@ You can install by running `pip install requests` or `pip install -r requirement
 3. In anywhere, open the emoji selector. Then open the Inspector again. 
 4. Type `emoji_dump(result)`, hit `Enter`, repeat again for certainty, then scroll down two notches, and repeat. You can quickly recall the lass executed commands by pressing `Up`.
 5. Repeat until you have gotten everything you want.
-6. Type `print_result()`, hit `Enter`. It may lag for a second. Afterward give it a quick check if anything's missing. After checking, right click in the console, and choose `Save as...`, and save the file in the same folder as the scripts. 
+6. Type `print_result(result)`, hit `Enter`. It may lag for a second. Afterward give it a quick check if anything's missing. After checking, right click in the console, and choose `Save as...`, and save the file in the same folder as the scripts. 
 
 and we're half way done. For the next steps, I recommend using [Notepad++](https://notepad-plus-plus.org/download/) rather thank using stock Notepad` due to display issues I've had with Notepad.
 
