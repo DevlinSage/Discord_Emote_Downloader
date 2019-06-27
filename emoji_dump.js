@@ -48,7 +48,7 @@ function emoji_dump(result_array){
   for (i in emoji_list){
     // Getting emoji's link from the emoji object's "outerHTML". This will get the "https://cdn[...]" link if
     // the emoji is custom, and garbo if the emoji is stock.
-    emoji_link = String(emoji_list[i]["outerHTML"]).slice(65 + (16 * nitro_status), 121 (16 * nitro_status));
+    emoji_link = String(emoji_list[i]["outerHTML"]).slice(65 + (16 * nitro_status), 121 + (16 * nitro_status));
     // For some bizarre reason getting the name will always throw an error once the end of the list is reached.
     // I don't know, but for the UI/UX let's ignore the error for now.
     try
