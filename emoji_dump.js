@@ -43,14 +43,14 @@ function emoji_dump(result_array){
 	
 	// For some bizarre reason getting the link and name will always throw an error once the end of the list is reached.
     // I don't know, but for the UI/UX let's ignore the error for now.
-	try
-	{
-		emoji_link = emoji_list[i]["style"]["background-image"].slice(5, -6)
-	}
-	catch(TypeError)
-	{
-		// Empty block of catch for professionally ignoring errors.
-	}
+    try
+    {
+        emoji_link = emoji_list[i]["style"]["background-image"].slice(5, -6)
+    }
+    catch(TypeError)
+    {
+    	// Empty block of catch for professionally ignoring errors.
+    }
     try
     {
         emoji_name = String(emoji_list[i]["__reactInternalInstance$"]["key"]).split("-")[0]
