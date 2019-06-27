@@ -9,13 +9,6 @@
 // |       modifying anything.       |
 //  ---------------------------------
 
-//  ---------------CRITICAL---------------CRITICAL---------------CRITICAL---------------
-// You must correctly specify the Nitro status of the account on the client you 
-// are running this code on else the code will not work due to a "disabled" tag 
-// ---[Set to 'false' if you don't have Nitro, else set to 'true'. Default is False]---
-var has_nitro = false
-//  ---------------CRITICAL---------------CRITICAL---------------CRITICAL---------------
-
 // This function search for an array in a bigger array of arrays because in JS, [1,2] !== [1,2] because not reffing the same object
 // Code pulled from StackOverflow (https://stackoverflow.com/questions/19543514/check-whether-an-array-exists-in-an-array-of-arrays)
 function searchForArray(haystack, needle){
@@ -33,7 +26,6 @@ function searchForArray(haystack, needle){
 
 // Prepare the result array and nitro status conversion
 var result = []
-var nitro_status = {true:1, false:0}[has_nitro]
 
 // The main function. Due to Discord's emoji list doesn't load all at once, presumably to optimize memory usage, and due to
 // me unable to find a way to automate scrolling, you'll need to manually scroll through things. Optimal: 2 scrolls 2 execute.
@@ -48,9 +40,17 @@ function emoji_dump(result_array){
   for (i in emoji_list){
     // Getting emoji's link from the emoji object's "outerHTML". This will get the "https://cdn[...]" link if
     // the emoji is custom, and garbo if the emoji is stock.
-    emoji_link = String(emoji_list[i]["outerHTML"]).slice(65 + (16 * nitro_status), 121 + (16 * nitro_status));
-    // For some bizarre reason getting the name will always throw an error once the end of the list is reached.
+	
+	// For some bizarre reason getting the link and name will always throw an error once the end of the list is reached.
     // I don't know, but for the UI/UX let's ignore the error for now.
+	try
+	{
+		emoji_link = emoji_list[i]["style"]["background-image"].slice(5, -6)
+	}
+	catch(TypeError)
+	{
+		// Empty block of catch for professionally ignoring errors.
+	}
     try
     {
         emoji_name = String(emoji_list[i]["__reactInternalInstance$"]["key"]).split("-")[0]
@@ -65,7 +65,7 @@ function emoji_dump(result_array){
 
     // As we have established above, if the emoji's link we got from above is a link to cdn, it will be kept.
     // Also a check to prevent duplication.
-    if ((emoji_link.slice(0,11) == "https://cdn") && !(searchForArray(result, emoji) >= 0))
+    if ((emoji_link.slice(0,11) == "https://cdn") && !(searchForArray(result_array, emoji) >= 0))
     {
         result_array.push(emoji)
     }
@@ -81,12 +81,12 @@ function emoji_dump(result_array){
 // Note: Execute twice if needed, the script may miss some emojis due to lag. (Read above, line 38-40)
 
 // Final function to print everything.
-function print_result()
+function print_result(result_array)
 {
   clear()
-  for (i in result)
+  for (i in result_array)
   {
-    console.log(result[i])
+    console.log(result_array[i])
   }
   return
 }
